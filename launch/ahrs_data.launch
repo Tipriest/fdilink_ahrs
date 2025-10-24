@@ -16,7 +16,7 @@
     <param name="imu_topic"  value="imu"/>
 
     <!-- 发布的imu话题中的frame_id -->
-    <param name="imu_frame"  value="gyro_link"/>
+    <param name="imu_frame"  value="IMU_LINK"/>
 
     <!-- 地磁北的yaw角 -->
     <param name="mag_pose_2d_topic"  value="/mag_pose_2d"/>
