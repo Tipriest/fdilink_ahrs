@@ -1,5 +1,6 @@
 ﻿#include <ahrs_driver.h>
 #include <Eigen/Eigen>
+// #include <time.h>
 namespace FDILink
 {
 ahrsBringup::ahrsBringup() :frist_sn_(false), serial_timeout_(20)
@@ -406,7 +407,14 @@ void ahrsBringup::processLoop()   // 数据处理过程
     if (head_type[0] == TYPE_IMU)
     {
       // publish imu topic
-      sensor_msgs::Imu imu_data;
+      sensor_msgs::Imu imu_data; 
+      // struct timespec ts;
+      // 获取系统从开机到现在的时间
+      // // CLOCK_BOOTTIME 会包括系统休眠时间
+      // clock_gettime(CLOCK_BOOTTIME, &ts);
+      // clock_gettime(CLOCK_MONOTONIC, &ts);
+      // imu_data.header.stamp.sec = ts.tv_sec;
+      // imu_data.header.stamp.nsec = ts.tv_nsec;
       imu_data.header.stamp = ros::Time::now();
       imu_data.header.frame_id = imu_frame_id_.c_str();
       Eigen::Quaterniond q_ahrs(ahrs_frame_.frame.data.data_pack.Qw,
