@@ -13,23 +13,23 @@
     <param name="baud"  value="921600"/>
 
     <!-- 发布的imu话题名 -->
-    <param name="imu_topic"  value="imu" ns="fdilink_ahrs"/>
+    <param name="imu_topic"  value="/fdilink_ahrs/imu"/>
 
     <!-- 发布的imu话题中的frame_id -->
     <param name="imu_frame"  value="IMU_LINK"/>
 
     <!-- 地磁北的yaw角 -->
-    <param name="mag_pose_2d_topic"  value="/mag_pose_2d"  ns="fdilink_ahrs"/>
+    <param name="mag_pose_2d_topic"  value="/fdilink_ahrs/mag_pose_2d" />
     <!-- 欧拉角 -->
-    <param name="Euler_angles_pub_"  value="/euler_angles"  ns="fdilink_ahrs"/>
+    <param name="Euler_angles_pub_"  value="/fdilink_ahrs/euler_angles" />
     <!-- 磁力计磁场强度 -->
-    <param name="Magnetic_pub_"  value="/magnetic" ns="fdilink_ahrs"/>
+    <param name="Magnetic_pub_"  value="/fdilink_ahrs/magnetic"/>
     <!-- gps数据输出话题-->
-    <param name="gps_topic_" value="/gps/fix" ns="fdilink_ahrs"/>
+    <param name="gps_topic_" value="/fdilink_ahrs/gps/fix"/>
     <!-- 机体系速度数据输出话题-->
-    <param name="twist_topic_" value="/system_speed" ns="fdilink_ahrs"/>
+    <param name="twist_topic_" value="/fdilink_ahrs/system_speed"/>
     <!-- NED系位移和速度数据输出话题-->
-    <param name="NED_odom_topic_" value="/NED_odometry" ns="fdilink_ahrs"/>
+    <param name="NED_odom_topic_" value="/fdilink_ahrs/NED_odometry"/>
 
     <!-- 发布的数据基于不同设备有不同的坐标系   -->
     <param name="device_type"  value="1"/> <!-- 0: origin_data, 1: for single imu or ucar in ROS, 2:for Xiao in ROS -->
