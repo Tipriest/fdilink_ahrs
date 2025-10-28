@@ -461,7 +461,14 @@ void ahrsBringup::processLoop()   // 数据处理过程
         imu_data.linear_acceleration.y = -imu_frame_.frame.data.data_pack.accelerometer_y;
         imu_data.linear_acceleration.z = -imu_frame_.frame.data.data_pack.accelerometer_z;
       }
-      imu_pub_.publish(imu_data);
+      pub_count++;
+      if (0 == pub_count%2){
+        imu_pub_.publish(imu_data);
+        if(1000 == pub_count){
+          pub_count = 0;
+        }
+      }
+        
 }
     //读取AHRS数据进行解析，并发布相关话题
     else if (head_type[0] == TYPE_AHRS)

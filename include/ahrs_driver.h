@@ -59,6 +59,7 @@ private:
   uint8_t read_sn_ = 0;
   bool frist_sn_;
   int device_type_ = 1;
+  int pub_count = 0;
 
   //serial
   serial::Serial serial_; //声明串口对象
